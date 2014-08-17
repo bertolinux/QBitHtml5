@@ -1,0 +1,80 @@
+.div_downloads {
+	font-size: 20px;
+	width: 100%;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+.div_container_downloads {
+	height: 500px;
+	overflow-y: scroll;
+	overflow:-moz-scrollbars-vertical;
+}
+
+.div_torrent {
+	
+}
+
+.row, .justStarted, .downloading, .finished, .paused {
+	font-size: 20px;
+	height: 100px;
+}
+
+.paused {
+	background-color: gray;
+	color: black;
+}
+
+.justStarted {
+	background-color: red;
+	color: white;
+}
+
+.downloading {
+	background-color: yellow;
+}
+
+.finished {
+	background-color: green;
+	color: white;
+}
+
+.button {
+	font-size: 30px;
+}
+
+.connectionDialog_class {
+	position: absolute;
+	font-size: 30px;
+	display: none;
+}
+
+.labelDialog {
+	text-align: left;
+	font-size: 20px;
+}
+
+.inputDialog {
+	font-size: 20px;
+}
+
+#div_dialogCommands  {
+	position: absolute; 
+	top: 150px; 
+	left: 20px; 
+	width: 300px; 
+	height: 300px; 
+	display: none; 
+	background-color: lightgray; 
+	word-wrap: break-word;
+	text-align: center; 
+	font-size: 25px";
+}
+
+#div_torrentNameOnCmdDialog {
+	font-size: 20px;
+}
+
+.buttons {
+	font-size: 20px;
+}

@@ -1,0 +1,74 @@
+<html>
+<head>
+	<script type="text/javascript" src="js/cordova.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/qbithtml5.js"></script>
+	<script type="text/javascript" src="js/db.js"></script>
+	<script type="text/javascript">
+	    app.initialize();
+	</script>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="header">
+</div>
+
+<div id="connectionDialog" class="connectionDialog_class">
+	<p>	Connection Dialog </p>
+	<form name="connection">
+		<table>
+			<tr>
+				<th class="labelDialog"> Hostname </th> 
+			</tr>
+			<tr>
+				<td> <input name=hostname type=text class="inputDialog"> </td> 
+			</tr>
+			<tr>
+				<th class="labelDialog"> Port </th> 
+			</tr>
+			<tr>
+				<td> <input name=port type=text class="inputDialog"> </td> 
+			</tr>
+			<tr>
+				<th class="labelDialog"> Username </th> 
+			</tr>
+			<tr>
+				<td> <input name=username type=text class="inputDialog"> </td> 
+			</tr>
+			<tr>
+				<th class="labelDialog"> Password </th> 
+			</tr>
+			<tr>
+				<td> <input name=password type=password class="inputDialog"> </td> 
+			</tr>
+		</table>
+		<input type=button value=Save class="inputDialog" onclick="app.saveConnection(this.form)">
+	</form>
+</div>
+
+<div id="div_container_downloads" class="div_container_downloads">
+	<div id="div_downloads" class="div_downloads">
+	</div>
+</div>
+
+<div id="div_footer" style="text-align: center; vertical-align: middle; height: 84px">
+	<p align="center">
+		<input type="button" value="REFRESH" onclick="refresh()" class="button">
+	</p>
+</div>
+
+<div id="div_dialogCommands">
+	<div id="div_torrentNameOnCmdDialog">
+	</div>
+	<form>
+		<input type=hidden value="" name="hash" id="hash">
+		<input type=button value=STOP class="buttons" onclick="stop(this.form.hash.value)"><BR><BR>
+		<input type=button value=START class="buttons" onclick="start(this.form.hash.value)"><BR><BR>
+		<input type=button value=DELETE class="buttons" onclick="deleteNormal(this.form.hash.value)"><BR><BR>
+		<input type=button value="DELETE FROM DISK" class="buttons" onclick="deleteFromDisk(this.form.hash.value)">
+	</form> 
+</div>
+
+</body>
+</html>
