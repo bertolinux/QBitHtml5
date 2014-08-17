@@ -84,6 +84,7 @@ function refresh() {
 		url: "http://" + connectionSettings.hostname + ":" + connectionSettings.port + "/json/events",
 		success: function(data) {
         	var items = [];
+        	$("#div_downloads").empty();
         	$.each(data,function(key,val) {
 	        	var torrentStyle = "downloading";
                 if (val.state == "pausedDL" || val.state == "pausedUP")
@@ -95,18 +96,16 @@ function refresh() {
                 }
                 var name=val.name.replace(/ /g,"_");
                 var hash=val.hash;
-                items.push("<div id='" + key + "' class='" + torrentStyle + "' onclick=onClickTorrent('" + hash + "','" + name + "')>" + val.name + "<br><span class='speed'>" + val.dlspeed + "</span><br>" + Math.round(val.progress*10000)/100 + "%" + "</div>");
+
+                var $template = $('#initial').clone();
+                $template.find('.speed').text(val.dlspeed);
+            	$template.attr("id",key);
+            	$template.find('.name').text(val.name + " " + torrentStyle);
+            	$template.find('.perc').text(Math.round(val.progress*10000)/100 + "%");
+            	$template.addClass(torrentStyle).removeClass("null");
+            	$template.show();
+            	$('#div_downloads').append($template);
 	        });
-            
-	        $("#div_downloads").empty();
-        	$( "<div/>", {
-                html: items.join( "" )
-            }).appendTo( "#div_downloads" );
-//        	
-//        	var $template = $('.downloading').clone();
-//        	$template.find('.speed').text("nuova velocita");
-//        	$('#div_downloads').append($template);
-        	
         },
         error: function() {
         	alert("Error contacting: " + connectionSettings.hostname + ":" + connectionSettings.port + "/json/events");

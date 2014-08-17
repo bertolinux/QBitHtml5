@@ -15,9 +15,15 @@
 	
 }
 
-.row, .justStarted, .downloading, .finished, .paused {
+.row, .justStarted, .downloading, .finished, .paused, .null {
 	font-size: 20px;
 	height: 100px;
+}
+
+.null {
+	background-color: gray;
+	color: black;
+	display: none;
 }
 
 .paused {
@@ -68,7 +74,7 @@
 	background-color: lightgray; 
 	word-wrap: break-word;
 	text-align: center; 
-	font-size: 25px";
+	font-size: 25px;
 }
 
 #div_torrentNameOnCmdDialog {
@@ -76,5 +82,17 @@
 }
 
 .buttons {
+	font-size: 20px;
+}
+
+.speed {
+	width: 100px;
+}
+
+.perc {
+	width: 100px;
+}
+
+.name {
 	font-size: 20px;
 }
