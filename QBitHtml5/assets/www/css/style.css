@@ -18,6 +18,7 @@
 .row, .justStarted, .downloading, .finished, .paused, .null {
 	font-size: 20px;
 	height: 100px;
+	width: 340px;
 }
 
 .null {
@@ -69,7 +70,7 @@
 	top: 150px; 
 	left: 20px; 
 	width: 300px; 
-	height: 300px; 
+	height: 320px; 
 	display: none; 
 	background-color: lightgray; 
 	word-wrap: break-word;
@@ -85,12 +86,11 @@
 	font-size: 20px;
 }
 
-.speed {
-	width: 100px;
-}
-
-.perc {
-	width: 100px;
+.speed, .perc, .eta, .size {
+	width: 23%;
+	text-align: left;
+	display: inline-block;
+	font-size: 15px;
 }
 
 .name {

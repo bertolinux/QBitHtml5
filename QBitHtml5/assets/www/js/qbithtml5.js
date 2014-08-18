@@ -57,10 +57,9 @@ function onClickTorrent(hash,name) {
     $("#div_dialogCommands").hide("fast");
     $("#div_torrentNameOnCmdDialog").empty();
     
-    $("<span>"+name+"</span><br><br>").appendTo("#div_torrentNameOnCmdDialog");
+    $("#div_dialogCommands").find('.name').text(name);
     $("#hash").val(hash);
     
-    $("#div_torrentNameOnCmdDialog").show("fast");
     $("#div_dialogCommands").show("fast");
 }
 
@@ -96,15 +95,21 @@ function refresh() {
                 }
                 var name=val.name.replace(/ /g,"_");
                 var hash=val.hash;
-
+                
                 var $template = $('#initial').clone();
+                $template.find('.size').text(val.size);
                 $template.find('.speed').text(val.dlspeed);
+                $template.find('.eta').text(val.eta);
             	$template.attr("id",key);
-            	$template.find('.name').text(val.name + " " + torrentStyle);
+            	$template.find('.name').text(val.name);
             	$template.find('.perc').text(Math.round(val.progress*10000)/100 + "%");
+            	$template.find('.perc').attr("id","a"+key);
             	$template.addClass(torrentStyle).removeClass("null");
+            	$template.attr("onclick","onClickTorrent('" + hash + "','" + name + "')");
+
             	$template.show();
             	$('#div_downloads').append($template);
+
 	        });
         },
         error: function() {

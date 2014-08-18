@@ -54,10 +54,10 @@
 </div>
 
 <div id="initial" class='null' onclick="onClickTorrent('','')">
-	<table>
-		<tr> <td colspan=2> <span class='name'>.Torrent.Name.ABCDEFGHIILMSMDNNS</span> </td> </tr>
-		<tr> <td> <span class='speed'> Speed </span> </td> <td> <span class='perc'> 100% </span> </td> </tr>
-	</table>
+	<div>
+		<span class='name'>.Torrent.Name.ABCDEFGHIILCIIIIDIDIIDIIDIIDS</span><br><br>
+		<span class='size'> Size </span> <span class='speed'> Speed </span> <span id="perc" class='perc' style="height:80px;width:80px"> 100% </span> <span class='eta'> 1h </span>
+	</div>
 </div>
 
 <div id="div_footer" style="text-align: center; vertical-align: middle; height: 84px">
@@ -69,6 +69,7 @@
 <div id="div_dialogCommands">
 	<div id="div_torrentNameOnCmdDialog">
 	</div>
+	<span class='name'>.Torrent.Name.ABCDEFGHIILMSMDNNS</span>
 	<form>
 		<input type=hidden value="" name="hash" id="hash">
 		<input type=button value=STOP class="buttons" onclick="stop(this.form.hash.value)"><BR><BR>
